@@ -5,11 +5,11 @@ import Purchases from './pages/Purchases'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import '../src/styles/App.css'
 import '../src/styles/Home.css'
-import NavBar from './components/Navbar'
+
 import LoadingScreen from './components/LoadingScreen'
 import { useSelector } from 'react-redux'
 import './styles/productDetails.css'
-import { Container } from 'react-bootstrap'
+import { Container, Navbar } from 'react-bootstrap'
 
 function App() {
  const isLoading=useSelector((state)=>state.isLoading)
@@ -20,7 +20,7 @@ function App() {
     <div className="App">
      {isLoading && <LoadingScreen/>}
     
-    <NavBar/>
+    <Navbar/>
     <Container className='my-5'>
      <Routes>
       <Route path='/' element={<Home/>}/>
