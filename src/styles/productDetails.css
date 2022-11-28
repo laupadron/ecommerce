@@ -39,13 +39,7 @@
  width: 35%;
  text-align: center;
 }
-input[type=»number»]
-{
--webkit-appearance: textfield !important;
-margin: 1;
--moz-appearance:textfield !important;
 
-}
 .related{
  display: flex;
  flex-direction: column;
