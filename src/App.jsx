@@ -10,7 +10,7 @@ import LoadingScreen from './components/LoadingScreen'
 import { useSelector } from 'react-redux'
 import './styles/productDetails.css'
 import { Container } from 'react-bootstrap'
-import NavBar from './components/Navbar.jsx'
+import NavBar from '../src/components/NavBar'
 
 function App() {
  const isLoading=useSelector((state)=>state.isLoading)

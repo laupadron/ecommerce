@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
  return (
-  <div className='navBar '>
+  <div className='navBar'>
     
       <Navbar bg="light" variant="light" className='general-nav'>
         <Container className='container-nav'>
