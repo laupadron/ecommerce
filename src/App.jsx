@@ -9,7 +9,8 @@ import '../src/styles/Home.css'
 import LoadingScreen from './components/LoadingScreen'
 import { useSelector } from 'react-redux'
 import './styles/productDetails.css'
-import { Container, Navbar } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
+import NavBar from './components/Navbar.jsx'
 
 function App() {
  const isLoading=useSelector((state)=>state.isLoading)
@@ -20,7 +21,7 @@ function App() {
     <div className="App">
      {isLoading && <LoadingScreen/>}
     
-    <Navbar/>
+    <NavBar/>
     <Container className='my-5'>
      <Routes>
       <Route path='/' element={<Home/>}/>
