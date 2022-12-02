@@ -1,6 +1,9 @@
 *{
  font-family: 'Yantramanav', sans-serif;
 }
+html{
+overflow-x: hidden;
+}
 
 /* LOADING */
 .lds-ripple {
