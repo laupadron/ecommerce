@@ -1,0 +1,23 @@
+.form-container{
+ 
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+.btn-signUp{
+width: 20% !important; 
+margin-top: 1rem;
+}
+.sign-up{
+ display: flex;
+ margin-top: 1rem;
+ gap:5px;
+}
+.link{
+ color:green;
+}
+.btn-loguin{
+ margin-left: 130px !important;
+ margin-top: 1rem !important;
+}

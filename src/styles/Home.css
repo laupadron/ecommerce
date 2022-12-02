@@ -82,6 +82,7 @@ ul{
  height:auto;
  border: 1px solid rgb(160,191,235);
 }
+
  
   .image1{
    margin-top: 1rem;
@@ -102,7 +103,7 @@ ul{
 }
 
 .over:hover{
- transform: scale(1.1);
+ transform: scale(0.5);
  cursor: pointer;
  background: #fff;
  opacity:0;
@@ -112,6 +113,7 @@ ul{
 -webkit-transform-style: preserve-3d;
 transform: rotateY(180deg);
 transform-style: preserve-3d;
+pointer-events: none;
 }
 .product-info{
  display: flex;
@@ -138,4 +140,9 @@ li.price{
   -moz-box-shadow: 10px 10px 5px 0px rgba(160,191,235,0.75);
   border: none
 }
-
+.btn-filter{
+ margin-left: 30px;
+}
+.form-filter{
+ margin-top: 1rem !important;
+}

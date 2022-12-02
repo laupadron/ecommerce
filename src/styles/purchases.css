@@ -1,0 +1,48 @@
+
+Link{
+ 
+ color: black;
+ 
+}
+ul{
+ list-style: none;
+ 
+}
+.container-purchases{
+ border:1px solid #485785;;
+display: flex !important;
+flex-direction: column;
+gap: 1rem;
+margin-bottom: 1rem;
+justify-content: center;
+border-radius: 1rem;
+padding: 1rem 0 0 1rem;
+}
+h4{
+ border-bottom: 1px solid grey;
+font-size: 5px;
+}
+.info-product{
+ display: flex;
+ justify-content: space-around;
+ gap: 1rem;
+}
+
+.tittle{
+ width: 50%;
+ 
+ left: 0px;
+}
+.quant{
+ width: 40px;
+ height: 40px;
+ border:1px solid grey; 
+ text-align: center;
+ left: 0;
+ border-radius: 50%;
+ padding-top: 8px;
+
+}
+.general-purchases{
+ border: none;
+}

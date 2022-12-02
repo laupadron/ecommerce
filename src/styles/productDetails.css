@@ -34,10 +34,28 @@
  display: flex;
  justify-content: center;
  align-items: center;
+ ;
+ 
+}
+.btn button{
+ border: none;
+ width: 30px;
+ border-radius: 3rem;
+ 
 }
 .btn input{
  width: 35%;
  text-align: center;
+ border: none;
+ 
+
+}
+.add{
+ align-self: center;
+ margin-top: 1rem;
+ margin-left: 40px;
+ border: none;
+ border-radius: 3rem;
 }
 
 .related{
@@ -53,6 +71,7 @@
 }
 .container-similar img{
  align-self: center;
+ background-color: transparent;
  }
  .container-similar li{
   text-align: center;

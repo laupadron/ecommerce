@@ -1,0 +1,48 @@
+.icon-cart{
+ display: flex;
+ justify-content: space-between;
+}
+
+.icon-cart p{
+ opacity: 0.5;
+ 
+}
+.icon-cart i{
+ color: #DC3535;
+}
+input{
+ width: 50px;
+ text-align: center;
+ 
+}
+.total{
+ display: flex;
+ justify-content: flex-end;
+ gap: 1rem;
+ margin-top: 1rem;
+}
+.general-total{
+ display: flex;
+ justify-content: space-between;
+}
+.title-total{
+opacity: 0.5;
+}
+button.btn-cart.btn.btn-primary{
+ width: 100%;
+ background-color: #DC3535;
+
+}
+.icon-cart{
+ border:none;
+ background-color: transparent;
+}
+.fa-trash-can{
+ margin-top: 10px;
+
+}
+.total-price{
+ display: flex;
+justify-content: space-between;
+font-size: 20px;
+}

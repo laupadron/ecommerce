@@ -1,3 +1,7 @@
+*{
+ font-family: 'Yantramanav', sans-serif;
+}
+
 /* LOADING */
 .lds-ripple {
  display: inline-block;

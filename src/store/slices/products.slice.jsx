@@ -8,6 +8,10 @@ export const productsSlice = createSlice({
     reducers: {
      setProducts:(state,action)=>{
       return action.payload
+     },
+     filterPrice:(state,action)=>{
+      const{fromPrice,toPrice}=action.payload;
+      return state.filter(product=>product.price > Number(fromPrice) && product.price < Number(toPrice))
      }
     }
 })
@@ -32,6 +36,7 @@ export const filterHeadlineThunk=(inputSearch)=> (dispatch) =>{
  .finally(()=>dispatch(setIsLoading(false)))
 
 }
-export const { setProducts } = productsSlice.actions;
+
+export const { setProducts,filterPrice } = productsSlice.actions;
 
 export default productsSlice.reducer;

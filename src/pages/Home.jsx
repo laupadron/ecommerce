@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {getProductThunk, filterProductThunk, filterHeadlineThunk} from '../store/slices/products.slice'
+import {getProductThunk, filterProductThunk, filterHeadlineThunk,filterPrice} from '../store/slices/products.slice'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -14,9 +14,13 @@ import { Col, Row } from 'react-bootstrap';
 const Home = () => {
  const dispatch=useDispatch();
  const products=useSelector(state=>state.products)
+ // console.log(products)
  // estado para mostrar las categorias
  const [categorys,setCategorys]=useState([]);
  const [inputSearch, setInputSearch] = useState("");
+ //estado para filtrado por precios
+ const [fromPrice,setFromPrice]=useState("");
+ const[toPrice,setToPrice]= useState('');
  
 
  useEffect(()=>{
@@ -25,11 +29,14 @@ const Home = () => {
   axios.get('https://e-commerce-api.academlo.tech/api/v1/products/categories')
   .then(res=>setCategorys(res.data.data.categories))
  },[])
- 
+
+
  return (
   <div >
-   {/* INPUT BUSQUEDA */}
+   
+   {/* INPUT BUSQUEDA NOMBRE */}
    <div className='inputs'>
+    
     <div className='input-one'>
     <InputGroup className="mb-3">
      
@@ -45,12 +52,14 @@ const Home = () => {
           onClick={()=>dispatch(filterHeadlineThunk(inputSearch))}>
           Button
          </Button>
-     
+      
         
       </InputGroup>
     </div>
    <Row>
-    <Col lg={2}>
+    <Col lg={2} sm={12}>
+     {/* INPUT BUSQUEDA PRECIO */}
+   
      {/* BOTONES FILTRADO POR PROD */}
     <ListGroup>
     <div className='input-two'>
@@ -66,10 +75,28 @@ const Home = () => {
      </div>
     
     </ListGroup>
+    <Form className='form-filter'>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>From Price</Form.Label>
+        <Form.Control type="number" value={fromPrice}
+          onChange={(e)=>setFromPrice(e.target.value)} />
+        
+      </Form.Group> 
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>To Price</Form.Label>
+        <Form.Control type="number" value={toPrice}
+          onChange={(e)=>setToPrice(e.target.value)} />
+      </Form.Group>
+     
+      <Button variant="primary" onClick={()=>dispatch(filterPrice({fromPrice,toPrice}))}className='btn-filter'>
+        Submit
+      </Button>
+     </Form>
     
     
     </Col>
-    <Col lg={10}>
+    <Col lg={10} sm={0}>
     {/* PRODUCTOS */}
      <div className='container-prod'>
       {products?.map(product=>(
@@ -80,9 +107,10 @@ const Home = () => {
        
         <li>
          <div className='image1'>
-         <img src={product.productImgs[0]} style={{width:'150px', height:'150px'}}className='principal' />
+         <img src={product.productImgs[2]} style={{width:'150px', height:'150px',backgroundColor:'transparent',objectFit:'fill'}}  />
           <div className="imag2">
-           <img src={product.productImgs[2]} style={{width:'150px', height:'150px'}} className='over' />
+           
+           <img src={product.productImgs[0]} style={{width:'150px', height:'150px',backgroundColor:'transparent',objectFit:'fill'}}className='over' />          
           </div>
           
           
@@ -94,7 +122,7 @@ const Home = () => {
          <li className='price'>Price</li>
          <div className='btn-info'>
           <li>$ {product.price}</li>
-          <button><i class="fa-solid fa-cart-plus"></i></button>
+          <button><i class="fa-solid fa-eye"></i></button>
          </div>
         </div>
        
